@@ -1,13 +1,17 @@
-package za.co.renieroosthuizen.infotxt;
+package za.co.renieroosthuizen.infotxt.drawer;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import za.co.renieroosthuizen.infotxt.R;
 
 /**
  * Created by Renier on 2015/06/17.
@@ -18,12 +22,12 @@ public class DrawerAdapter extends BaseAdapter {
      */
     private LayoutInflater mInflater;
 
-    private ArrayList<String> mDataSet;
+    private List<DrawerItem> mDataSet;
 
     /**
      * Default constructor
      */
-    public DrawerAdapter(Context context, ArrayList<String> dataSet) {
+    public DrawerAdapter(Context context, List<DrawerItem> dataSet) {
 
         mInflater = LayoutInflater.from(context);
         mDataSet = dataSet;
@@ -50,6 +54,7 @@ public class DrawerAdapter extends BaseAdapter {
             holder = new ViewHolder();
             recycledView = mInflater.inflate(R.layout.item_drawer, parent, false);
             holder.title = (TextView) recycledView.findViewById(R.id.title);
+            holder.icon = (ImageView) recycledView.findViewById(R.id.icon);
 
             recycledView.setTag(holder);
 
@@ -57,12 +62,16 @@ public class DrawerAdapter extends BaseAdapter {
             holder = (ViewHolder) recycledView.getTag();
         }
 
-        holder.title.setText(mDataSet.get(position));
+        DrawerItem item = mDataSet.get(position);
+
+        holder.title.setText(item.getTitle());
+        holder.icon.setImageResource(item.getDrawableId());
 
         return recycledView;
     }
 
     private static class ViewHolder {
         TextView title;
+        ImageView icon;
     }
 }

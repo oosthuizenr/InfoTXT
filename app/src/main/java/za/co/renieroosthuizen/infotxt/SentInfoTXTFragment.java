@@ -3,10 +3,13 @@ package za.co.renieroosthuizen.infotxt;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.github.clans.fab.FloatingActionMenu;
 
 
 /**
@@ -15,6 +18,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SentInfoTXTFragment extends Fragment {
+
+    private FloatingActionMenu mActionMenu;
 
     /**
      * Creates a new instance of the SentInfoTXTFragment
@@ -40,8 +45,39 @@ public class SentInfoTXTFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sent_info_txt, container, false);
+        View v = inflater.inflate(R.layout.fragment_sent_info_txt, container, false);
+
+        mActionMenu = (FloatingActionMenu) v.findViewById(R.id.famSend);
+
+        v.findViewById(R.id.fabManual).setOnClickListener(fabClickListener);
+        v.findViewById(R.id.fabContact).setOnClickListener(fabClickListener);
+        v.findViewById(R.id.fabCallLog).setOnClickListener(fabClickListener);
+
+        return v;
     }
+
+
+    private View.OnClickListener fabClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId())
+            {
+                case R.id.fabManual:
+                    Toast.makeText(getActivity(), "Manual tapped", Toast.LENGTH_LONG).show();
+                    break;
+
+                case R.id.fabContact:
+                    Toast.makeText(getActivity(), "Contact tapped", Toast.LENGTH_LONG).show();
+                    break;
+
+                case R.id.fabCallLog:
+                    Toast.makeText(getActivity(), "Call Log tapped", Toast.LENGTH_LONG).show();
+                    break;
+            }
+
+            mActionMenu.close(true);
+        }
+    };
 
 
     @Override

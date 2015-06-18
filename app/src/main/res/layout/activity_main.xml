@@ -29,7 +29,7 @@
              the container. -->
         <fragment
             android:id="@+id/navigation_drawer"
-            android:name="za.co.renieroosthuizen.infotxt.NavigationDrawerFragment"
+            android:name="za.co.renieroosthuizen.infotxt.drawer.NavigationDrawerFragment"
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"/>

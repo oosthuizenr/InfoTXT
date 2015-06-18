@@ -1,10 +1,58 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context="za.co.renieroosthuizen.infotxt.SentInfoTXTFragment">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/famSend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_backgroundColor="#44000000">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabManual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dialpad_white_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="@string/action_button_infotxt_manual"
+            fab:fab_colorNormal="@color/fab_menu_normal"
+            fab:fab_colorPressed="@color/fab_menu_pressed"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabCallLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_white_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="@string/action_button_infotxt_call_log"
+            fab:fab_colorNormal="@color/fab_menu_normal"
+            fab:fab_colorPressed="@color/fab_menu_pressed" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_contacts_white_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="@string/action_button_infotxt_contact"
+            fab:fab_colorNormal="@color/fab_menu_normal"
+            fab:fab_colorPressed="@color/fab_menu_pressed" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
 
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Sent InfoTXT Fragment" />
 
 </FrameLayout>

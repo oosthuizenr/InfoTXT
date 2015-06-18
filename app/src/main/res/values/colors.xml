@@ -11,4 +11,12 @@
     <color name="divider">#B6B6B6</color>
     <color name="toolbar_title">#FFFFFF</color>
 
+    <color name="accent_pressed">#E6AE09</color>
+
+
+    <color name="fab_parent_normal">#00796B</color>
+    <color name="fab_parent_pressed">#009688</color>
+    <color name="fab_menu_normal">#009688</color>
+    <color name="fab_menu_pressed">#00796B</color>
+
 </resources>

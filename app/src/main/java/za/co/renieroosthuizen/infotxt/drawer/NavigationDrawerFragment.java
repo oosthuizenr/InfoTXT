@@ -1,4 +1,4 @@
-package za.co.renieroosthuizen.infotxt;
+package za.co.renieroosthuizen.infotxt.drawer;
 
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -15,6 +15,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import za.co.renieroosthuizen.infotxt.R;
+import za.co.renieroosthuizen.infotxt.drawer.DrawerAdapter;
 
 
 /**
@@ -82,7 +85,7 @@ public class NavigationDrawerFragment extends Fragment {
         drawerItems.add("Item 1");
         drawerItems.add("Item 2");
 
-        mDrawerListView.setAdapter(new DrawerAdapter(this.getActivity(), drawerItems));
+        mDrawerListView.setAdapter(new DrawerAdapter(this.getActivity(), DrawerItem.getListOfNavigationDrawerItems(this.getActivity())));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 
         return mDrawerListView;
@@ -137,7 +140,7 @@ public class NavigationDrawerFragment extends Fragment {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
         if (mCallbacks != null) {
-            mCallbacks.onNavigationDrawerItemSelected(position);
+            mCallbacks.onNavigationDrawerItemSelected((DrawerItem)mDrawerListView.getAdapter().getItem((position)));
         }
     }
 
@@ -187,7 +190,7 @@ public class NavigationDrawerFragment extends Fragment {
         /**
          * Called when an item in the navigation drawer is selected.
          */
-        void onNavigationDrawerItemSelected(int position);
+        void onNavigationDrawerItemSelected(DrawerItem drawerItem);
     }
 
 

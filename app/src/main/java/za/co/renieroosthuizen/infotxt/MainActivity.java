@@ -3,16 +3,16 @@ package za.co.renieroosthuizen.infotxt;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+
+import za.co.renieroosthuizen.infotxt.drawer.DrawerItem;
+import za.co.renieroosthuizen.infotxt.drawer.NavigationDrawerFragment;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment
-        .NavigationDrawerCallbacks, InfoItemsFragment.OnFragmentInteractionListener {
+        .NavigationDrawerCallbacks{
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
@@ -33,10 +33,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
-        // Load Fragment1 when the app starts
+        // Load InfoItems fragment when the app starts
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, new InfoItemsFragment())
+                .replace(R.id.container, new SentInfoTXTFragment())
                 .commit();
     }
 
@@ -48,29 +48,29 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onNavigationDrawerItemSelected(DrawerItem drawerItem) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        switch (position) {
-            case 0:
-
+        switch (drawerItem.getType()) {
+            case InfoItemsList:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new InfoItemsFragment())
                         .commit();
                 break;
-            case 1:
 
+            case SentInfoItems:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, new InfoItemsFragment())
+                        .replace(R.id.container, new SentInfoTXTFragment())
+                        .commit();
+                break;
+
+            case Settings:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new SettingsFragment())
                         .commit();
                 break;
         }
-
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
     }
 }
