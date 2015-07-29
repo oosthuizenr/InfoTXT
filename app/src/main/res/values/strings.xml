@@ -6,9 +6,14 @@
     <string name="title_activity_main">InfoTXT</string>
 
 
+    <string name="action_save">Save</string>
+
 
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_close">Drawer Close</string>
+
+    <string name="manage_part_text_name_prompt">Name</string>
+    <string name="manage_part_text_value_prompt">Value</string>
 
 
 <!-- TODO: Remove or change this placeholder text -->
@@ -33,4 +38,6 @@
     <string name="action_button_infotxt_manual">Send InfoTXT to number</string>
     <string name="action_button_infotxt_call_log">Send InfoTXT to recent call</string>
     <string name="action_button_infotxt_contact">Send InfoTXT to contact</string>
+
+    <string name="manage_info_items_fragment_items_label">Items</string>
 </resources>

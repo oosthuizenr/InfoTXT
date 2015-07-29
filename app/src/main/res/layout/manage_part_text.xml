@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <za.co.renieroosthuizen.infotxt.views.CustomTextInputLayout
+            android:id="@+id/tilName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/manage_part_text_name_prompt"
+                android:singleLine="true" />
+        </za.co.renieroosthuizen.infotxt.views.CustomTextInputLayout>
+
+        <za.co.renieroosthuizen.infotxt.views.CustomTextInputLayout
+            android:id="@+id/tilValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tilName"
+            android:layout_alignStart="@+id/tilName"
+            android:layout_below="@+id/tilName"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/edtValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/manage_part_text_value_prompt"
+                android:singleLine="true" />
+        </za.co.renieroosthuizen.infotxt.views.CustomTextInputLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

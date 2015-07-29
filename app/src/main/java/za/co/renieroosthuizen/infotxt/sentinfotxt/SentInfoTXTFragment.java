@@ -1,7 +1,5 @@
-package za.co.renieroosthuizen.infotxt;
+package za.co.renieroosthuizen.infotxt.sentinfotxt;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
+
+import za.co.renieroosthuizen.infotxt.R;
 
 
 /**
@@ -26,7 +26,6 @@ public class SentInfoTXTFragment extends Fragment {
      *
      * @return A new instance of fragment SentInfoTXTFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static SentInfoTXTFragment newInstance() {
         SentInfoTXTFragment fragment = new SentInfoTXTFragment();
         return fragment;
